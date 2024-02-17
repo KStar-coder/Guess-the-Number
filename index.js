@@ -7,7 +7,7 @@ const submit = document.querySelector('#subt')
 const userInput = document.querySelector('#guessField')
 const guessSlot = document.querySelector('.guesses')
 const remaining = document.querySelector('.lastResult')
-const lowOrHigh = document.querySelector('.lowOrHigh')
+const lowOrHigh = document.querySelector('.lowOrHi')
 const startOver = document.querySelector('.resultParas')
 
 const p = document.createElement('p') // we need a paragraph 
@@ -70,7 +70,7 @@ function checkGuess(guess) {
         displayMessage(`Number is too small`)
     }
     else {
-        displayMessage('Number is too large')
+        displayMessage(`Number is too large`)
     }
 }
 
@@ -105,7 +105,7 @@ function newGame() {
         guessSlot.innerHTML = ''
         remaining.innerHTML = `${11 - numGuess} `
         userInput.removeAttribute('disabled')
-        startOver.removeChild(prevGuess)
+        startOver.removeChild(p)
         playGame = true
     });
 }
